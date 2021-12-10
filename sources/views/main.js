@@ -40,7 +40,9 @@ export default class TopView extends JetView{
                         }
                         ],
                         
-                },             
+                },
+
+                //Table Items beside Input Form             
                 { view:"datatable",     
                   id:"item_list",     
                   scroll:"y",     
@@ -51,9 +53,9 @@ export default class TopView extends JetView{
                         let values = $$ ("item_list").getItem(id);
                         $$("item_form").setValues(values)
                         }
-                     },
-                },
-                      
+                     }
+                }
+                //End Table Items
                 ]
                 
             }, 

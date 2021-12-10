@@ -24,9 +24,9 @@
     transition: background 1s;
 }
 .invalid_login{
-    -webkit-animation: formshake .5s linear;
+    -animation: formshake .5s linear;
 }
-@-webkit-keyframes formshake {
+@keyframes formshake {
     8%, 41% {
         -webkit-transform: translateX(-10px);
     }
@@ -56,3 +56,16 @@
 	font-size:20px;
 	vertical-align:middle;
 }
+
+.rank .webix_cell, .rank.webix_hcell {
+	text-align:center;
+  }
+
+  #areaA, #areaB{
+    margin: 50px;
+    padding: 50px;
+    background-color:#C6D9F0;
+    font-family: 'PT Sans', Tahoma;
+    font-size: 15px;
+    color:#666
+  }
