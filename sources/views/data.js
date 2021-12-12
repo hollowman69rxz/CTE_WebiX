@@ -1,42 +1,30 @@
+// views/top.js
 import {JetView} from "webix-jet";
-import { data } from "../models/records";
+import {data} from "models/records";
 
-export default class LayoutView extends JetView {
-	config(){ 
-		return{
-			view:"datatable",     
-                  id:"item_list",  
-				  headermenu:{
-					view:"popup",
-  id:"my_pop",
-  width:300,
-  body:{
-    view:"list", 
-    data:[
-      {id:"1", name:"Zoo", location: "New York"},
-      {id:"2", name:"Coffeebar", location:"Salt Lake City"},
-      {id:"3", name:"Teeparty", location:"Alabama"}
-    ],
-    template:"#name# - #location#",
-    autoheight:true,
-    select:true
-  }
-				},
-                  scroll:"y",     
-                  autoConfig: true,     
-                  data:data,
-                  on:{
-                        onHeaderClick(id){
-                        let values = $$("itemlist").getValues(id);
-						$$("itemlist").getPopup();
-                        }
-                     }
-		}
-				  
-	}
-	init(view){
+export default class TopView extends JetView {
+    config(){
+        return {
+            view:"datatable",
+            autoConfig:true,
+            localId:"body",
+            data:data
+            
+        };
+    }
+    init(view){
 		view.parse(data);
-
 	}
-	
+   init(){
+        const context = this.ui({
+            view:"contextmenu", localId:"context",
+            data:[
+                {value:"Add", icon:"wxi-eye"},
+                {value:"Rename", icon:"wxi-pencil"},
+                {value:"Delete",icon:"wxi-trash"},
+                { $template:"Separator" },
+                {value:"Info",icon:"wxi-trash"}]
+        });
+        context.attachTo(this.$$("body").getNode());
+    }
 }
