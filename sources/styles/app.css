@@ -60,12 +60,3 @@
 .rank .webix_cell, .rank.webix_hcell {
 	text-align:center;
   }
-
-  #areaA, #areaB{
-    margin: 50px;
-    padding: 50px;
-    background-color:#C6D9F0;
-    font-family: 'PT Sans', Tahoma;
-    font-size: 15px;
-    color:#666
-  }
