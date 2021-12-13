@@ -38,7 +38,7 @@ export default class TopView extends JetView {
                 {value:"UoM",icon:"wxi-eye"},
                 {value:"Price",icon:"wxi-eye"},
                 {$template:"Separator" },
-                {value:"Info",icon:"wxi-user"}]
+                {value:"Info",icon:"wxi-eye"}]
         });
         context.attachTo(this.$$("body").getNode());
     }
